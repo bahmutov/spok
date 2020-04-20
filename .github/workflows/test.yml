@@ -25,7 +25,7 @@ jobs:
         CI: true
 
   publish:
-    requires: build
+    needs: build
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
