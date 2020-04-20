@@ -1,6 +1,6 @@
 {
   "name": "@bahmutov/spok",
-  "version": "1.1.0",
+  "version": "0.0.0-development",
   "description": "Checks a given object against a given set of specifications to keep you from writing boilerplate tests.",
   "main": "dist/spok.js",
   "typings": "dist/spok.d.ts",
@@ -27,14 +27,15 @@
     "tsl": "tslint -p . --force -t stylish",
     "tsl:fix": "tslint -p . --force -t stylish --fix",
     "tsfmt": "tsfmt --baseDir . -r",
-    "lint": "npm run tsc &&  npm run tsl"
+    "lint": "npm run tsc &&  npm run tsl",
+    "semantic-release": "semantic-release"
   },
   "browser": {
     "./dist/inspect.js": "./dist/inspect-browser.js"
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/thlorenz/spok.git"
+    "url": "https://github.com/thlorenz/spok.git"
   },
   "homepage": "https://github.com/thlorenz/spok",
   "dependencies": {
@@ -48,7 +49,8 @@
     "tape": "~4.0.0",
     "tslint": "^5.18.0",
     "typescript": "^3.5.3",
-    "typescript-formatter": "^7.2.2"
+    "typescript-formatter": "^7.2.2",
+    "semantic-release": "^17.0.6"
   },
   "keywords": [
     "test",

@@ -26,3 +26,13 @@ jobs:
 
   publish:
     requires: build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - name: Build 🏗
+        run: npm run tsc
+      - name: Semantic Release 🚀
+        uses: cycjimmy/semantic-release-action@v2
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
