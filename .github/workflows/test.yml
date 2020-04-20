@@ -1,4 +1,4 @@
-name: Node CI 
+name: Node CI
 
 on: [push]
 
@@ -23,3 +23,6 @@ jobs:
         npm run test-main
       env:
         CI: true
+
+  publish:
+    requires: build
