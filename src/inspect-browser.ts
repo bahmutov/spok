@@ -1,4 +1,4 @@
-import * as util from 'util'
+const util = require('./util/util')
 import spok from './spok'
 
 // terminal colors won't show properly in the browser
