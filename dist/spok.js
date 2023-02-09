@@ -96,14 +96,9 @@ const spok = (t, obj, specifications, prefix = '') => {
     }
     // check all specs
     Object.keys(specifications).forEach(check);
-    // provide confirmation that spec is done
-    if (spok.sound) {
-        require('child_process').execSync('say spokie dokie -v Vicki -r 600');
-    }
 };
 spok.printSpec = true;
 spok.printDescription = false;
-spok.sound = false;
 spok.color = true;
 /**
  * Specififies that the given number is within the given range,

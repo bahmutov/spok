@@ -50,7 +50,6 @@ interface Spok {
 
   printSpec: boolean
   printDescription: boolean
-  sound: boolean
   color: boolean
 
   gtz: Specification<number>
@@ -168,16 +167,10 @@ const spok: Spok = (
 
   // check all specs
   Object.keys(specifications).forEach(check)
-
-  // provide confirmation that spec is done
-  if (spok.sound) {
-    require('child_process').execSync('say spokie dokie -v Vicki -r 600')
-  }
 }
 
 spok.printSpec = true
 spok.printDescription = false
-spok.sound = false
 spok.color = true
 
 /**

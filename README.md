@@ -1,4 +1,4 @@
-# spok [![](https://github.com/bahmutov/spok/workflows/Node%20CI/badge.svg?branch=master)](https://github.com/bahmutov/spok/actions)
+# spok [![](https://github.com/bahmutov/spok/workflows/test/badge.svg?branch=master)](https://github.com/bahmutov/spok/actions)
 
 Checks a given object against a given set of specifications to keep you from writing boilerplate tests.
 
