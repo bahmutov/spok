@@ -19,7 +19,7 @@
     "sourceMap": true,
     "outDir": "./dist",
     "lib": ["esnext"],
-    "allowJs": false,
+    "allowJs": true,
     "types": ["node"]
   },
   "include": ["src"]
