@@ -538,4 +538,18 @@ spok.notDefined = function notDefined(x) {
 spok.notDefined.$spec = 'spok.notDefined';
 spok.notDefined.$description = 'value is either null or undefined';
 exports.default = spok;
+function chaiExpect(expectFn = expect) {
+    let strip = (s) => s;
+    if (typeof window !== 'undefined') {
+        spok.color = false;
+        spok.printDescription = false;
+        strip = require('./strip-ansi');
+    }
+    const adapter = {
+        equal: (a, b, desc) => expectFn(a, strip((desc !== null && desc !== void 0 ? desc : ''))).equal(b),
+        deepEqual: (a, b, desc) => expectFn(a, strip((desc !== null && desc !== void 0 ? desc : ''))).deep.include(b),
+    };
+    return adapter;
+}
+exports.chaiExpect = chaiExpect;
 //# sourceMappingURL=spok.js.map
