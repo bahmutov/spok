@@ -1,4 +1,5 @@
-import * as util from 'util'
+// @ts-ignore
+import utilInspect from 'browser-util-inspect'
 import spok from './spok'
 
 // terminal colors won't show properly in the browser
@@ -7,5 +8,5 @@ if (spok && spok.color) {
 }
 
 export default function inspect(obj: any, color: boolean) {
-  return util.inspect(obj, false, 5, color)
+  return utilInspect(obj, false, 5, color)
 }

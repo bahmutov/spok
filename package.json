@@ -44,6 +44,7 @@
   "homepage": "https://github.com/bahmutov/spok",
   "dependencies": {
     "ansicolors": "~0.3.2",
+    "browser-util-inspect": "^0.2.0",
     "is-arguments": "^1.1.1",
     "is-generator-function": "^1.0.10",
     "is-typed-array": "^1.1.10",
