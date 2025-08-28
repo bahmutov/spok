@@ -5,7 +5,11 @@
   "main": "dist/spok.js",
   "typings": "dist/spok.d.ts",
   "files": [
-    "dist",
+    "dist/spok.d.ts",
+    "dist/*.ts",
+    "dist/*.ts.map",
+    "dist/*.js",
+    "dist/*.js.map",
     "!dist/__tests__"
   ],
   "private": false,
@@ -30,7 +34,8 @@
     "semantic-release": "semantic-release"
   },
   "browser": {
-    "./dist/inspect.js": "./dist/inspect-browser.js"
+    "./dist/inspect.js": "./dist/inspect-browser.js",
+    "./dist/utils.js": "./dist/utils-browser.js"
   },
   "repository": {
     "type": "git",
