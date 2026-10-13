@@ -188,5 +188,12 @@ test('\nspecifications in isolation', (t) => {
   t.ok(!spok.notDefined(1), '1 is not notDefined')
   t.ok(spok.notDefined(null), 'null is notDefined')
   t.ok(spok.notDefined(undefined), 'undefined is notDefined')
+
+  // oneOf tests
+  t.ok(spok.oneOf([1, 2, 3])(2), '2 is one of [1, 2, 3]')
+  t.ok(!spok.oneOf([1, 2, 3])(4), '4 is not one of [1, 2, 3]')
+  t.ok(spok.oneOf(['foo', 'bar'])('foo'), '"foo" is one of ["foo", "bar"]')
+  t.ok(!spok.oneOf(['foo', 'bar'])('baz'), '"baz" is not one of ["foo", "bar"]')
+
   t.end()
 })

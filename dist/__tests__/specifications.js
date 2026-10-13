@@ -153,6 +153,11 @@ tape_1.default('\nspecifications in isolation', (t) => {
     t.ok(!spok_1.default.notDefined(1), '1 is not notDefined');
     t.ok(spok_1.default.notDefined(null), 'null is notDefined');
     t.ok(spok_1.default.notDefined(undefined), 'undefined is notDefined');
+    // oneOf tests
+    t.ok(spok_1.default.oneOf([1, 2, 3])(2), '2 is one of [1, 2, 3]');
+    t.ok(!spok_1.default.oneOf([1, 2, 3])(4), '4 is not one of [1, 2, 3]');
+    t.ok(spok_1.default.oneOf(['foo', 'bar'])('foo'), '"foo" is one of ["foo", "bar"]');
+    t.ok(!spok_1.default.oneOf(['foo', 'bar'])('baz'), '"baz" is not one of ["foo", "bar"]');
     t.end();
 });
 //# sourceMappingURL=specifications.js.map

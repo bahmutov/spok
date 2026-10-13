@@ -94,6 +94,7 @@ Specs and descriptions are printed in gray so you can focus on the actual values
     - [spok.arrayElementsRange](#spokarrayelementsrange)
     - [spok.number](#spoknumber)
     - [spok.string](#spokstring)
+    - [spok.oneOf](#spokoneof)
     - [spok.function](#spokfunction)
     - [spok.definedObject](#spokdefinedobject)
     - [spok.startsWith](#spokstartswith)
@@ -322,6 +323,16 @@ Specifies that the input is a string.
     var spec = {
       x: spok.string  // specifies that x should be a String
     }
+
+### spok.oneOf
+
+Checks if the value is present in the list
+
+```js
+var spec = {
+  role: spok.oneOf(['intern', 'employee']),
+}
+```
 
 ### spok.function
 

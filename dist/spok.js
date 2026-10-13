@@ -162,6 +162,14 @@ spok.ge = function ge(n) {
     checkge.$description = 'value >= ' + n;
     return checkge;
 };
+spok.oneOf = function oneOf(options) {
+    function checkOneOf(x) {
+        return options.includes(x);
+    }
+    checkOneOf.$spec = 'spok.oneOf(' + JSON.stringify(options) + ')';
+    checkOneOf.$description = 'value is one of ' + JSON.stringify(options);
+    return checkOneOf;
+};
 /**
  * Specififies that a number is less than the given criteria.
  *

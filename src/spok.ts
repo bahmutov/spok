@@ -87,6 +87,8 @@ interface Spok {
   endsWith(what: string): Specification<string>
 
   test(regex: RegExp): Specification<string>
+
+  oneOf(options: Array<unknown>): Specification<unknown>
 }
 
 /**
@@ -239,6 +241,16 @@ spok.ge = function ge(n: number) {
   checkge.$spec = 'spok.ge(' + n + ')'
   checkge.$description = 'value >= ' + n
   return checkge
+}
+
+spok.oneOf = function oneOf(options: Array<unknown>) {
+  function checkOneOf(x: unknown) {
+    return options.includes(x)
+  }
+
+  checkOneOf.$spec = 'spok.oneOf(' + JSON.stringify(options) + ')'
+  checkOneOf.$description = 'value is one of ' + JSON.stringify(options)
+  return checkOneOf
 }
 
 /**
