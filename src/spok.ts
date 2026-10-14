@@ -64,6 +64,17 @@ interface Spok {
   defined: Specification<unknown>
   notDefined: Specification<unknown>
 
+  /**
+   * Checks if the value is within the specified range (inclusive).
+   * @param min The minimum value (inclusive).
+   * @param max The maximum value (inclusive).
+   * @example
+   * ```js
+   * spok.range(1, 10)(5) // true
+   * spok.range(1, 10)(0) // false
+   * spok.range(0, 1)(0.5) // true
+   * ```
+   */
   range(min: number, max: number): Specification<number>
 
   gt(x: number): Specification<number>
@@ -82,12 +93,38 @@ interface Spok {
 
   arrayElementsRange(min: number, max: number): Specification<unknown[]>
 
+  /**
+   * Confirms that the given string starts with the specified substring.
+   * Exact match.
+   * @example
+   * ```js
+   * spok.startsWith('foo')('foobar') // true
+   * spok.startsWith('foo')('barfoo') // false
+   * ```
+   */
   startsWith(what: string): Specification<string>
 
+  /**
+   * Confirms that the given string ends with the specified substring.
+   * Exact match.
+   * @example
+   * ```js
+   * spok.endsWith('foo')('barfoo') // true
+   * spok.endsWith('foo')('foobar') // false
+   * ```
+   */
   endsWith(what: string): Specification<string>
 
   test(regex: RegExp): Specification<string>
 
+  /**
+   * Checks if the value is one of the provided options.
+   * @example
+   * ```js
+   * spok.oneOf([1, 2, 3])(2) // true
+   * spok.oneOf([1, 2, 3])(4) // false
+   * ```
+   */
   oneOf(options: Array<unknown>): Specification<unknown>
 }
 
