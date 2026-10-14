@@ -36,6 +36,10 @@ jobs:
       # that this workflow is trusted
       id-token: write
     steps:
+      - uses: actions/setup-node@v6
+        with:
+          node-version: 24
+
       - uses: actions/checkout@v7
       - uses: bahmutov/npm-install@v1
       - name: Build 🏗
